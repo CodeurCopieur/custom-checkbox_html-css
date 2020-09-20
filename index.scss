@@ -1,0 +1,72 @@
+/*===== GOOGLE FONTS =====*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+/*===== Colores =====*/
+
+$first-color: #3664F4;
+$dark-color: #070D1F;
+$dark-color-alt: #282B3A;
+$white-color: #E6E7E9;
+
+/*===== BASE =====*/
+*,::before,::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body{
+  font-family: 'Poppins', sans-serif;
+  padding-left: 20px;
+
+  .title {
+    color: $first-color;
+  }
+
+  .wrap {
+    .checkboxContainer{
+
+      display: inline-block;
+      padding-left: 30px;
+      position: relative;
+      cursor: pointer;
+      font-size: 22px;
+
+      input {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .checkmark {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        background-color: $dark-color-alt;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 3px;
+      }
+
+      input:checked + .checkmark {
+        background-color: $first-color;
+      }
+
+      input:checked + .checkmark:after {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 13px;
+        border-left: 3px solid $white-color;
+        border-bottom: 3px solid $white-color;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+
+    }
+  }
+}
+
